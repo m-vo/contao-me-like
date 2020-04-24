@@ -1,0 +1,59 @@
+{
+  "name": "mvo/contao-me-like",
+  "type": "contao-bundle",
+  "description": "mvo/me-like integration for Contao",
+  "keywords": [
+    "like",
+    "vote",
+    "email",
+    "confirm",
+    "me-like",
+    "contao"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Moritz Vondano",
+      "homepage": "https://github.com/m-vo/contao-like"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "contao/core-bundle": "^4.9",
+    "mvo/me-like": "dev-master"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0",
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "phpstan/phpstan": "^0.11.8"
+  },
+  "conflict": {
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mvo\\ContaoMeLike\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Mvo\\ContaoMeLike\\ContaoManager\\Plugin"
+  },
+  "scripts": {
+    "cs": [
+      "vendor/bin/php-cs-fixer fix -v --ansi"
+    ],
+    "phpstan": [
+      "vendor/bin/phpstan analyse src --level=7 --ansi"
+    ],
+    "chain": [
+      "@cs",
+      "@phpstan"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../me-like"
+    }
+  ]
+}

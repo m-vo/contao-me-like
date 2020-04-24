@@ -1,0 +1,5 @@
+services:
+  mvo.contao_me_like.listener.rename_entity:
+    class: Mvo\ContaoMeLike\EventListener\RenameEntityListener
+    tags:
+      - { name: 'doctrine.event_listener', event: 'loadClassMetadata' }
